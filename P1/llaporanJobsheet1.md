@@ -1,4 +1,4 @@
-# Laporan Praktikum Dasar Pemrograman Jobsheet 5 Pemilihan
+# Laporan Praktikum Algoritma dan Struktur Data
 
 <h4>Nama : Rhenza Rendragraha<h4>
 <h4>NIM : 254107020049<h4>
