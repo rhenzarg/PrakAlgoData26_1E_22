@@ -1,5 +1,6 @@
 package P2;
 
+
 public class Dosen28 {
     
     String idDosen28;
