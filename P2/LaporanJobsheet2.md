@@ -89,3 +89,7 @@ secara berurutan? Jelaskan alasannya!
 berparameter dari class Mahasiswa!
 - Kode Program
   <img width="1112" height="127" alt="image" src="https://github.com/user-attachments/assets/c9d1bad9-4e47-4124-b18b-b0a483b4a785" />
+
+## Tugas 1
+- Berikut Kode clas
+![alt text](image.png)
