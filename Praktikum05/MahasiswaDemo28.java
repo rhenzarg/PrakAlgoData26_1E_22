@@ -4,50 +4,44 @@ import java.util.Scanner;
 
 public class MahasiswaDemo28 {
     public static void main(String[] args) {
+        MahasiswaBerprestasi28 list = new MahasiswaBerprestasi28(5);
         Scanner rhenza = new Scanner(System.in);
-       
-        System.out.print("Masukan jumlah mahsiswa: ");
-        int n = rhenza.nextInt();
-        rhenza.nextLine();
 
-        MahasiswaBerprestasi28 list = new MahasiswaBerprestasi28(n);
+        int jumMhs = 5;
 
-        for (int i = 0; i < n; i++) {
-            System.out.println("Masukan jumlah mahasiswa ke-" + (i+1));
-
-            System.out.print("NIM: ");
+        for (int i = 0; i < jumMhs; i++) {
+            System.out.println("Masukkan Data Mahasiswa ke-" + (i + 1));
+            System.out.print("NIM : ");
             String nim = rhenza.nextLine();
-
-            System.out.print("Nama: ");
+            System.out.print("Nama : ");
             String nama = rhenza.nextLine();
-
-            System.out.print("Kelas: ");
+            System.out.print("Kelas : ");
             String kelas = rhenza.nextLine();
+            System.out.print("IPK : ");
+            String ip = rhenza.nextLine();
 
-            System.out.print("IPK: ");
-            double ipk = rhenza.nextDouble();
-            rhenza.nextLine();
+            double ipk = Double.parseDouble(ip);
+            System.out.println("--------------------------------------------------");
 
-            Mahasiswa28 m = new Mahasiswa28(nim, nama, kelas, ipk);
-            list.tambah(m);
+            list.tambah(new Mahasiswa28(nim, nama, kelas, ipk));
         }
 
-        System.out.println("\nData sebelum sorting: ");
         list.tampil();
 
-        list.bubbleSort();
+        System.out.println("--------------------------------------------------");
+        System.out.println("Pencarian data");
+        System.out.println("--------------------------------------------------");
+        System.out.print("Masukkan ipk mahasiswa yang dicari: ");
+        System.out.print("IPK: ");
+        double cari = rhenza.nextDouble();
 
-        System.out.println("\nData setelah sorting (DESC): ");
-        list.tampil();
+        System.out.println("--------------------------------------------");
+        System.out.println("menggunakan binary searching");
+        System.out.println("--------------------------------------------");
+        double posisi2 = list.findBinarySearch(cari, 0, jumMhs - 1);
+        int pss2 = (int) posisi2;
 
-        System.out.println("Data yang sudah terurut menggunakan SELECTION SORT (ASC)");
-        list.slectionSort();
-        list.tampil();
-
-        System.out.println("Data yang sudah terurut menggunakan INSERTION SORT (ASC)");
-        list.insertionSort();
-        list.tampil();
-
-        rhenza.close();
+        list.tampilPosisi(cari, pss2);
+        list.tampilDataSearch(cari, pss2);
     }
 }
