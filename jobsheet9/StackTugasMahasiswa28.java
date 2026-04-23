@@ -7,14 +7,14 @@ public class StackTugasMahasiswa28 {
 
     public StackTugasMahasiswa28(int size) {
         this.size = size;
-        stack  = new  Mahasiswa28[size];
+        stack = new Mahasiswa28[size];
         top = -1;
     }
 
     public boolean isFull() {
         if (top == size - 1) {
             return true;
-        }else {
+        } else {
             return false;
         }
     }
@@ -22,7 +22,7 @@ public class StackTugasMahasiswa28 {
     public boolean isEmpty() {
         if (top == -1) {
             return true;
-        }else {
+        } else {
             return false;
         }
     }
@@ -31,7 +31,7 @@ public class StackTugasMahasiswa28 {
         if (!isFull()) {
             top++;
             stack[top] = mhs;
-        }else {
+        } else {
             System.out.println("Stack penuh! Tidak bisa menambahkan lagi.");
         }
     }
@@ -41,7 +41,7 @@ public class StackTugasMahasiswa28 {
             Mahasiswa28 m = stack[top];
             top--;
             return m;
-        }else {
+        } else {
             System.out.println("Stack kosong! Tidak ada tugas untuk dinilai");
             return null;
         }
@@ -50,7 +50,7 @@ public class StackTugasMahasiswa28 {
     public Mahasiswa28 peek() {
         if (!isEmpty()) {
             return stack[top];
-        }else {
+        } else {
             System.out.println("Stack kosong! Tidak ada tugas yang dikumpulkan");
             return null;
         }
@@ -58,19 +58,23 @@ public class StackTugasMahasiswa28 {
 
     public void print() {
         for (int i = top; i >= 0; i--) {
-            System.out.println(stack[i].nama + "\t" 
-                + stack[i].nim + "\t" 
-                + stack[i].kelas);
+            System.out.println(stack[i].nama + "\t"
+                    + stack[i].nim + "\t"
+                    + stack[i].kelas);
         }
         System.out.println("");
     }
 
     public Mahasiswa28 peekBottom() {
-    if (!isEmpty()) {
-        return stack[0];
-    } else {
-        System.out.println("Stack kosong!");
-        return null;
+        if (!isEmpty()) {
+            return stack[0];
+        } else {
+            System.out.println("Stack kosong!");
+            return null;
+        }
     }
-}
+
+    public int jumlahTugas() {
+        return top + 1;
+    }
 }
